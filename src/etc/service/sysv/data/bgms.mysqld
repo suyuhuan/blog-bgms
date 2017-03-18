@@ -1,0 +1,14 @@
+#!/bin/sh
+# chkconfig: - 64 36
+# description:  MySQL database server of bgms
+
+run_user="bgms"
+
+cur_user=`whoami`
+if [ "$run_user" != "$cur_user" ]
+then
+	sudo -n -u $run_user -i /home/${run_user}/pear/sysv_mysqld.user "$@"
+else
+	. /home/${run_user}/pear/init_bash_env.sh
+	/home/${run_user}/pear/sysv_mysqld.user "$@"
+fi

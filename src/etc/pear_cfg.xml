@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<library>
+  <channel name="pear.taxicolor.org" url="http://pear.taxicolor.org/channel.xml">
+    <package name="utility" version="1.0.0"/>
+    <package name="db" version="1.0.0"/>
+    <package name="sql" version="1.0.0"/>
+    <package name="info" version="1.0.0"/>
+    <package name="maint" version="1.0.0"/>
+    <package name="interface" version="1.0.0"/>
+    <package name="table_based_intf" version="1.0.0"/>
+  </channel>
+</library>

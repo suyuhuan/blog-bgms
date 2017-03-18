@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<request>
+ <method isMulti="true" name="GET">
+  <param isMulti="true" name="op" type="string" necessary="false" default="lookup" position="GET">
+   <desc></desc>
+   <enum value="lookup"></enum>
+   <enum value="search"></enum>
+   <enum value="help"></enum>
+  </param>
+  <param name="alt" type="string" necessary="false" default="json" position="GET">
+   <desc></desc>
+   <enum value="json"></enum>
+   <enum value="php"></enum>
+   <enum value="dump"></enum>
+   <enum value="xml"></enum>
+  </param>
+  <param name="callback" type="string" necessary="false" default="" position="GET">
+   <desc></desc>
+  </param>
+  <param name="invoke-mode" type="string" necessary="false" default="normal" position="GET">
+   <desc></desc>
+   <enum value="debug"></enum>
+   <enum value="normal"></enum>
+  </param>
+  <param name="err-report-mode" type="string" necessary="false" default="normal" position="GET">
+   <desc></desc>
+   <enum value="silent"></enum>
+   <enum value="normal"></enum>
+  </param>
+ </method>
+ <method name="POST">
+  <param name="op" type="string" necessary="true" position="GET">
+   <desc></desc>
+   <enum value="add"></enum>
+   <enum value="update"></enum>
+   <enum value="test"></enum>
+  </param>
+  <param name="alt" type="string" necessary="true" position="GET">
+   <desc></desc>
+   <enum value="json"></enum>
+   <enum value="php"></enum>
+   <enum value="dump"></enum>
+   <enum value="xml"></enum>
+  </param>
+  <param name="callback" type="string" necessary="false" default="" position="GET">
+   <desc></desc>
+  </param>
+  <param name="invoke-mode" type="string" necessary="false" default="normal" position="GET">
+   <desc></desc>
+   <enum value="debug"></enum>
+   <enum value="normal"></enum>
+  </param>
+  <param name="err-report-mode" type="string" necessary="false" default="normal" position="GET">
+   <desc></desc>
+   <enum value="silent"></enum>
+   <enum value="normal"></enum>
+  </param>
+ </method>
+ <method name="DELETE">
+  <param name="op" type="string" necessary="true" position="GET">
+   <desc></desc>
+   <enum isMulti="true" value="delete"></enum>
+   <enum isMulti="true" value="test"></enum>
+  </param>
+  <param name="alt" type="string" necessary="true" position="GET">
+   <desc></desc>
+   <enum value="json"></enum>
+   <enum value="php"></enum>
+   <enum value="dump"></enum>
+   <enum value="xml"></enum>
+  </param>
+  <param name="callback" type="string" necessary="false" default="" position="GET">
+   <desc></desc>
+  </param>
+  <param name="invoke-mode" type="string" necessary="false" default="normal" position="GET">
+   <desc></desc>
+   <enum value="debug"></enum>
+   <enum value="normal"></enum>
+  </param>
+  <param name="err-report-mode" type="string" necessary="false" default="normal" position="GET">
+   <desc></desc>
+   <enum value="silent"></enum>
+   <enum value="normal"></enum>
+  </param>
+ </method>
+ <method name="PUT">
+  <param name="op" type="string" necessary="true" position="GET">
+   <desc></desc>
+   <enum value="test"></enum>
+   <enum value="test1"></enum>
+   <enum value="test2"></enum>
+  </param>
+  <param name="alt" type="string" necessary="true" position="GET">
+   <desc></desc>
+   <enum value="json"></enum>
+   <enum value="php"></enum>
+   <enum value="dump"></enum>
+   <enum value="xml"></enum>
+  </param>
+  <param name="callback" type="string" necessary="false" default="" position="GET">
+   <desc></desc>
+  </param>
+  <param name="invoke-mode" type="string" necessary="false" default="normal" position="GET">
+   <desc></desc>
+   <enum value="debug"></enum>
+   <enum value="normal"></enum>
+  </param>
+  <param name="err-report-mode" type="string" necessary="false" default="normal" position="GET">
+   <desc></desc>
+   <enum value="silent"></enum>
+   <enum value="normal"></enum>
+  </param>
+  <param name="int-param" type="int" necessary="false" default="30" position="GET|POST">
+   <desc>test only, int type</desc>
+   <range max="-1000"/>
+   <range min="-5" max="5"/>
+   <range min="10" max="100"/>
+   <range min="1000"/>
+  </param>
+  <param name="float-param" type="float" necessary="false" default="30.5" position="GET|COOKIE">
+   <desc>test only, float type</desc>
+   <range max="-1000.5"/>
+   <range min="-5.5" max="5.5"/>
+   <range min="10.5" max="100.5"/>
+   <range min="1000.5"/>
+  </param>
+  <param name="str-param" type="string" necessary="false" default="aaa" position="HEADER">
+   <desc>test only, string type</desc>
+   <len-range max="3"/>
+   <len-range min="5" max="10"/>
+   <len-range min="15" max="20"/>
+   <len-range min="50"/>
+  </param>
+ </method>
+</request>

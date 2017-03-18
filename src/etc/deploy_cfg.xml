@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deployment>
+  <group name="default" actor="default">
+    <server ip="0.0.0.0/0"/>
+  </group>
+  <group name="dev" actor="dev">
+    <server ip="192.168.200.20/24" actor="master"/>
+    <server ip="xxx.xxx.xxx.xxx" actor="slave"/>
+  </group>
+  <group name="test" actor="$ACTOR">
+    <server ip="xxx.xxx.xxx.xxx" actor="$ACTOR"/>
+    <server ip="xxx.xxx.xxx.xxx"/>
+  </group>
+  <group name="prod" actor="$ACTOR">
+    <server ip="xxx.xxx.xxx.xxx" actor="$ACTOR"/>
+    <server ip="xxx.xxx.xxx.xxx"/>
+  </group>
+</deployment>

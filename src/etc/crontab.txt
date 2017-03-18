@@ -1,0 +1,8 @@
+# m(0-59) h(0-23) dom(1-31) m(1-12) dow(0-7,sun=0|7)
+#maintenance the apache log
+0 1,2,3 * * * ($HOME/pear/crontab_exec.sh maint_apache_log $HOME/pear/maint_apache_log.sh) >$HOME/tmp/maint_apache_log.log 2>&1
+#maintenance the php log
+0 1 * * * ($HOME/pear/crontab_exec.sh maint_php_log $HOME/pear/maint_php_log.sh) >$HOME/tmp/maint_php_log.log 2>&1
+#add your extra crontab task in below
+#sample
+#*/5 * * * * ($HOME/pear/crontab_exec.sh sample $HOME/src/CURRENT/maint/sample.sh) >$HOME/tmp/sample.log 2>&1

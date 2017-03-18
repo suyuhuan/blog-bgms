@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mysql>
+  <cluster name="dev">
+    <server ip="192.168.200.0/24" actor="master" id="1">
+      <db name="bgms" init-db-sql="init_db_bgms.sql"/>
+      <account host="localhost" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="127.0.0.1" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="192.168.200.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="192.168.200.%" user="slave" password="evals-5412" privilege="REPLICATION SLAVE" db="*" table=""/>
+    </server>
+    <server ip="y.y.y.y" actor="slave" id="2" master-host="x.x.x.x" master-port="40020" master-user="slave" master-password="evals-5412">
+      <account host="localhost" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="127.0.0.1" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="192.168.0.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+    </server>
+  </cluster>
+  <cluster name="test">
+    <server ip="x.x.x.x" actor="master" id="1">
+      <db name="bgms" init-db-sql="init_db_bgms.sql"/>
+      <account host="localhost" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="127.0.0.1" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="192.168.0.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="192.168.0.%" user="slave" password="evals-5412" privilege="REPLICATION SLAVE" db="*" table=""/>
+    </server>
+    <server ip="y.y.y.y" actor="slave" id="2" master-host="x.x.x.x" master-port="40020" master-user="slave" master-password="evals-5412">
+      <account host="localhost" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="127.0.0.1" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="192.168.0.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+    </server>
+  </cluster>
+  <cluster name="prod">
+    <server ip="x.x.x.x" actor="master" id="1">
+      <db name="bgms" init-db-sql="init_db_bgms.sql"/>
+      <account host="localhost" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="127.0.0.1" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="192.168.1.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="122.209.125.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="192.168.16.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="10.0.25.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="14.128.24.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="192.168.1.%" user="slave" password="evals-5412" privilege="REPLICATION SLAVE" db="*" table=""/>
+      <account host="122.209.125.%" user="slave" password="evals-5412" privilege="REPLICATION SLAVE" db="*" table=""/>
+      <account host="192.168.16.%" user="slave" password="evals-5412" privilege="REPLICATION SLAVE" db="*" table=""/>
+      <account host="10.0.25.%" user="slave" password="evals-5412" privilege="REPLICATION SLAVE" db="*" table=""/>
+      <account host="14.128.24.%" user="slave" password="evals-5412" privilege="REPLICATION SLAVE" db="*" table=""/>
+    </server>
+    <server ip="y.y.y.y" actor="slave" id="2" master-host="x.x.x.x" master-port="40020" master-user="slave" master-password="evals-5412">
+      <account host="localhost" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="127.0.0.1" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="192.168.1.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="122.209.125.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="192.168.16.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="10.0.25.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+      <account host="14.128.24.%" user="bgms" password="smgb-5412" privilege="ALL PRIVILEGES" db="bgms" table=""/>
+    </server>
+  </cluster>
+</mysql>
